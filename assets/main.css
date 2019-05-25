@@ -2,9 +2,10 @@ body{
     margin: 0 ;
     padding:0 ;
 }
+/* ~~~~~~~ to make background blur , it is necessary to introduce a other div , otherwise bluring in body section would blur whole page~~~~~~~ */
 #gallery-background {
     position: absolute;
-    top: 0;
+    top: 0;    
     left: 0;
     bottom: 0;
     right: 0;
@@ -14,9 +15,13 @@ body{
     background-size:cover;
     filter: blur(9px);
 }
+
+/* ~~~~~~~ making all elements with class name flex a flexbox~~~~~~~ */
 .flex{
     display: flex;
 }
+
+/* ~~~~~~~ this contains logo and navigation button ~~~~~~~ */
 .content_wrapper {
    padding-top: 30px;
    margin: 0  auto ;
@@ -26,19 +31,22 @@ body{
    justify-content: space-around;
    align-items: center;
 }
-
+/* ~~~~~~~ this is enough for making RESPONSIVE images ~~~~~~~ */
 img{ 
     width: auto;
     height : auto;
     max-height: 100%;
     max-width: 100%; 
 }
+
 a{  
     text-decoration: none;
     position:relative;  
     padding: 19px 22px;
     transition: all 0.2s ease;
 }
+/* ~~~~~~~ this defines a content(psuedo element) just before anchor tag , that circle you see green colored is actually this content and on hovering this content covers whole achor tag ~~~~~~~ */
+
 a:before{
     content:'';
     position:absolute;
@@ -50,17 +58,19 @@ a:before{
     height: 56px;
     transition: all .3s ease
 }
+
 a>span{
     position: relative;
     font-size: 30px;
     line-height: 18px;
     font-weight: 900;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.1em;   
     text-transform: uppercase;
     vertical-align: middle;
     color:white
 
 }
+/* ~~~~~~~ the arrow after "DIVE IN"  is made with svg ~~~~~~~ */
 a>svg{
     position:relative;
     fill:none;
@@ -70,6 +80,8 @@ a>svg{
     transform: translateX(-10px);
     transition: all .3s ease
 }
+
+/* ~~~~~~~ here that psuedo content with green background covers the whole anchor tag ~~~~~~~ */
 a:hover:before{
     width:100%;
     background: rgba(9, 247, 187, 0.3);
@@ -78,10 +90,12 @@ a:hover:before{
 a:hover svg{
     transform: translateX(0);
 }
+
 a:active{
     transform: scale(0.3);  
 }
 
+/* ~~~~~~~ used to make content , more bigger and centered in mobile devices ~~~~~~~ */
 @media (max-width:991px){
     .content_wrapper{
         justify-content: center;
@@ -105,9 +119,9 @@ a:active{
   }
     
 }
-
+/* ~~~~~~~ this is for making shadow of menu buttons fully cover the button , separate anchor  for menupage  so that it wont affect the button on landing page ~~~~~~~ */
 .menupage_anchors:before{
-    width: 100%;
+    width: 100%; 
 }
 
 
